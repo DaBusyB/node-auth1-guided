@@ -1,5 +1,3 @@
-const db = require("../database/connection.js");
-
 module.exports = {
   add,
   find,
@@ -8,7 +6,9 @@ module.exports = {
 };
 
 function find() {
-  return db("users").select("id", "username").orderBy("id");
+  return db("users")
+  // .select("id", "username")
+  .orderBy("id");
 }
 
 function findBy(filter) {
